@@ -6,40 +6,74 @@ const textoResultado = document.querySelector(".texto-resultado")
 
 const perguntas = [
     {
-        enunciado: "O que é bullying?",
+        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
         alternativas: [
-            "A averssão ao comportamento violento.",
-            "É um comportamento agresssivo repetitivo que causa grandes traumas."
+            {
+                texto: "Isso é assustador!",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "Isso é maravilhoso!" ,
+                afirmacao: "afirmação" 
+            }
+
         ]
     },
     {
-        enunciado: "Quais são os tipos comuns de bullying nas escolas?",
+        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial (IA), uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
         alternativas: [
-            "Físico, verbal, social e cyberbullying.",
-            "Abraçar, agradecer o colega."
+            {
+                texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
+                afirmacao: "afirmação"
+            }
         ]
     },
     {
-        enunciado: "Como o bullying afeta as pessoas?",
+        pergunta: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
         alternativas: [
-            "Pode causar danos emocionais, psicológicos e físicos.",
-            "O bullying não afeta após parar de ocorrer."
+            {
+                texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
+                afirmacao: "afirmação"
+            }
+
         ]
     },
     {
-        enunciado: "Como as escolas lidam com o bullying?",
+        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
         alternativas: [
-            "As escolas não possuem alternativas para reverter os casos de bullying.",
-            "As escolas tem políticas anti-bullying e programas de prevenção para o acaso."
+            {
+                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
+                afirmacao: "afirmação"
+            }
+
+
         ]
     },
     {
-        enunciado: "Quais são os desafios enfrentados na prevenção do bullying nas escolas?",
+        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
         alternativas: [
-            "Falta de conscietização sobre o bullying, relutância dos alunos em relatarem os incidentes e a falta de recursos.",
-            "Não possuem desafios, pois todos compreendem a gravidade do acaso."
+            {
+                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
+                afirmacao: "afirmação"
+            },
+            {
+                texto:"O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
+                afirmacao: "afirmação"
+            }
         ]
-    }
+    },
 ];
 
 let atual = 0;
@@ -48,12 +82,15 @@ let perguntaAtual;
 function mostraPergunta() {
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-    mostraAlternativas();
 }
 
 function mostraAlternativas() {
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.addEventListener("click", function() {
+            atual++;
+            mostraPergunta();
+        });
         botaoAlternativas.textContent = alternativa;
         caixaAlternativas.appendChild(botaoAlternativas);
     }
