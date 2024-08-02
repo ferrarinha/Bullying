@@ -10,13 +10,12 @@ const perguntas = [
         alternativas: [
             {
                 texto: "A aversão ao comportamento violento",
-                afirmacao: "afirmação"
+                afirmacao: "Você precisa se informar a respeito da temática,"
             },
             {
-                texto: "Éum comportamento agressivo repetitivo que causa grandes traumas." ,
-                afirmacao: "afirmação" 
+                texto: "É um comportamento agressivo repetitivo que causa grandes traumas." ,
+                afirmacao: "Você está previamente informado sobre o bullying," 
             }
-
         ]
     },
     {
@@ -24,26 +23,25 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Físico, verbal, social e cyberbullying",
-                afirmacao: "afirmação"
+                afirmacao: "e compreende suas principais manifestações."
             },
             {
                 texto: "Abraçar, agradecer o colega",
-                afirmacao: "afirmação"
+                afirmacao: "ademais precisa compreender como se ocorre."
             }
         ]
     },
     {
-        pergunta: "Como o bullying afeta as pessoas?",
+        enunciado: "Como o bullying afeta as pessoas?",
         alternativas: [
             {
                 texto: "Pode causar danos emocionais, psicológicos e físicos.",
-                afirmacao: "afirmação"
+                afirmacao: "Muito bem, você está ciente dos possíveis danos,"
             },
             {
                 texto: "O bullying não afeta após parar de ocorrer",
-                afirmacao: "afirmação"
+                afirmacao: "É perceptível, que você ainda não tem conhecimento abrangente sobre o bullying,"
             }
-
         ]
     },
     {
@@ -51,11 +49,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "As escolas não possuem alternativas para reverter os casos de bullying",
-                afirmacao: "afirmação"
+                afirmacao: "além de não estar totalmente informado sobre como é enfrentado nas instituições de ensino."
             },
             {
                 texto: "As escolas tem políticas anti-bullying e programas de prevenção para o acaso",
-                afirmacao: "afirmação"
+                afirmacao: "além de conhecer as medidas tomadas nas instituições de ensino."
             }
 
 
@@ -66,11 +64,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Falta de conscientização sobre o bullying, relutância dos alunos em relatarem os incidentes e a falta de recursos.",
-                afirmacao: "afirmação"
+                afirmacao: "Parabéns, você identifica os principais desafios para enfrentar o bullying nas escolas brasileiras."
             },
             {
                 texto:"Não possuem desafios, pois todos compreendem a gravidade do acaso",
-                afirmacao: "afirmação"
+                afirmacao: "Aparentemente, você não está ciente dos maiores entraves do combate à temática nas escolas brasileiras."
             }
         ]
     },
@@ -107,7 +105,7 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
+    caixaPerguntas.textContent = "...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
